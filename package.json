@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm-watch",
+    "lint:build": "mv out/_next out/assets && sed -i 's/\\\\/_next/\\\\/assets/g' out/**.html",
+    "build": "next build && next export && npm run lint:build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.8",
+    "@notionhq/client": "^2.2.13",
+    "@types/chrome": "^0.0.245",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
@@ -18,5 +24,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "npm-watch": "^0.11.0"
   }
 }

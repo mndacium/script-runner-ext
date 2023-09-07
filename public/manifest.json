@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "description": "Add scripts and run them",
+    "name": "Create React App Sample12312",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "js": [
+                "inject.js"
+            ]
+        }
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "tabs",
+        "scripting",
+        "activeTab"
+    ]
+}
